@@ -1,4 +1,9 @@
-print("Kolya")
-s = 2
-print(s)
-e = 4
+print('Hi, PyCharm')
+
+x = 43
+
+y = 32
+
+print(x * y)
+
+print("End line")
