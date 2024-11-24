@@ -19,5 +19,6 @@ def get_multiplied_digits(number):
         else:
             return first * rest
 
+
 print(get_multiplied_digits(420))
 
