@@ -1,6 +1,5 @@
 def get_multiplied_digits(number):
     str_number = str(number)
-
     if not str_number:
         return 1
 
@@ -11,17 +10,14 @@ def get_multiplied_digits(number):
             return int(str_number)
 
     first = int(str_number[0])
-    if len(str_number) > 1:
-        return first * get_multiplied_digits(int(str_number[1:]))
+    if first == 0:
+        return get_multiplied_digits(int(str_number[1:]))
     else:
-        return first
+        rest = get_multiplied_digits(int(str_number[1:]))
+        if rest == 0:
+            return 0
+        else:
+            return first * rest
 
 print(get_multiplied_digits(420))
 
-
-#Здравствуйте!
-#Задание выполнено почти верно, однако есть небольшая ошибка:
-#1) При умножении цифр числа нули должны быть учтены:
-# при встрече с 0 функция должна продолжать рекурсию, пропуская этот ноль,
-# так как умножение на 0 должно обнулять результат.
-# В текущем виде функция не обнуляет результат при наличии нуля.
